@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>Nhập vào giá trị độ F để chuyển sang độ C:</h3>
+<label for="input_F">Độ F</label>
+<input type="text" id="input_F">
+<button id="btn" onclick="on_click()">Convert</button>
+<p id="result"></p>
+</body>
+</html>
+<script>
+  function temp_convert(F) {
+      // F = parseFloat(F);
+    return ((F-32)/(9/5));
+  }
+  function on_click () {
+      let input = +document.getElementById('input_F').value;
+      let C = temp_convert(input);
+      document.getElementById('result').innerHTML = `Độ C: ${C}`;
+  }
+</script>
